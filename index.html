@@ -55,6 +55,7 @@
     <link rel="shortcut icon" href="assets/images/favicon.ico" />
     <!-- favicon end -->
     <script src="assets/email.js"></script>
+    <script src="assets/send-email.js"></script>
     <!-- fonts begin -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -122,16 +123,12 @@
           <span class="light-bold">impact</span>, and
           <span class="light-bold">innovation</span>.
         </p>
-        <form
-          action="https://formspree.io/f/xjvnrqad"
-          method="POST"
-          class="form"
-        >
+        <form id="aiipe-send-email" class="form">
           <input
             type="email"
             placeholder="Enter Your Email for Exclusive Access"
-            id="aii-pe-email"
-            name="aii-pe-email"
+            id="email"
+            name="email"
             required
           />
           <button class="button-red" type="submit">Join Now</button>
