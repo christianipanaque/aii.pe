@@ -2,8 +2,13 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("aiipe-send-email"); // Adjust the ID to match your form
+  const emailInput = document.getElementById("email");
+  const submitButton = document.getElementById("submit-button");
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+
+    // Change the button text to show loading dots
+    submitButton.innerText = "Joining...";
 
     // Construct the form data
     var formData = new FormData(form);
@@ -12,6 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
       object[key] = value;
     });
     var json = JSON.stringify(object);
+
+    // Disable the input and the button
+    emailInput.disabled = true;
+    submitButton.disabled = true;
 
     // Post the data to the Google Apps Script endpoint
     fetch(

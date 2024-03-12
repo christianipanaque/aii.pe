@@ -291,6 +291,7 @@ h2 {
   padding: 0.75rem 1.25rem;
   width: 100%;
   border-radius: 6px 0px 0px 6px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .form input:focus {
@@ -328,6 +329,25 @@ h2 {
   transition-duration: 0.2s;
   border-radius: 0px 6px 6px 0px;
   padding: 0.9rem 1rem;
+  box-shadow: 0px 0px 2px var(--cta-bg-color);
+}
+
+.form input:disabled {
+  background-color: #f2f2f2; /* Light grey background to indicate it's not active */
+  color: #cccccc; /* Dimmed text color */
+  border: 1px solid #cccccc; /* Matching border to make it cohesive */
+  cursor: not-allowed; /* Shows a 'not-allowed' cursor on hover */
+  box-shadow: 0px 0px 2px #bbbbbb;
+}
+
+/* Style for disabled buttons */
+.form button:disabled {
+  background-color: #cccccc; /* Grey background to show it's not clickable */
+  color: #666666; /* Darker text color but still shows it's disabled */
+  border: 1px solid #bbbbbb; /* Slightly darker border for depth */
+  cursor: not-allowed; /* Shows a 'not-allowed' cursor on hover */
+  opacity: 0.7; /* Optional: makes the button appear faded */
+  box-shadow: 0px 0px 2px #bbbbbb;
 }
 
 @media (max-width: 900px) {
