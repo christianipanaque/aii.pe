@@ -18,6 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     var json = JSON.stringify(object);
 
+    gtag("set", "user_data", {
+      email: object.email,
+    });
+
     // Disable the input and the button
     emailInput.disabled = true;
     submitButton.disabled = true;
