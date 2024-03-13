@@ -214,7 +214,7 @@ body.indexfb .main {
     max-width: 100%;
   }
 
-  .main :where(p, span, h1) {
+  .main :where(p, span, h1, h2) {
     text-align: center !important;
   }
 
@@ -369,7 +369,8 @@ h2 {
 }
 
 @media (max-width: 900px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 2em;
   }
 
