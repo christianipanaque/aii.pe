@@ -1,23 +1,17 @@
 ---
-layout: news
+layout: default
 title: Artificial Inteligence News
 description: AI News description
 ---
 
-{% include header_navigation.html %}
-<header>
-  <h1>Stay updated AI News</h1>
+{% include header_navigation.html %} {% assign today = 'now' | date: "%Y-%m-%d"
+%} {% for post in site.news_posts %} {% assign post_date = post.date | date:
+"%Y-%m-%d" %} {% if post_date == today %}
+<header class="news-header">
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.date | date: "%A, %B %d, %Y" }}</p>
 </header>
-<main>
-  <section>
-    <h2>Latest News</h2>
-    {% for new_article in site.news_posts %}
-    <article>
-      <h3>{{ new_article.title }}</h3>
-      <p>{{ new_article.date | date: "%B %-d, %Y" }}</p>
-      <a href="{{ new_article.url | relative_url }}">Read more</a>
-    </article>
-    {% endfor %}
-  </section>
+<main class="news-main">
+  <section>{{ post.content }}</section>
 </main>
-{% include footer_navigation.html %}
+{% endif %} {% endfor %} {% include footer_navigation.html %}
