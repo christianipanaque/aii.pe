@@ -1,0 +1,23 @@
+---
+layout: news
+title: Artificial Inteligence News
+description: AI News description
+---
+
+{% include header_navigation.html %}
+<header>
+  <h1>Stay updated AI News</h1>
+</header>
+<main>
+  <section>
+    <h2>Latest News</h2>
+    {% for new_article in site.news_posts %}
+    <article>
+      <h3>{{ new_article.title }}</h3>
+      <p>{{ new_article.date | date: "%B %-d, %Y" }}</p>
+      <a href="{{ new_article.url | relative_url }}">Read more</a>
+    </article>
+    {% endfor %}
+  </section>
+</main>
+{% include footer_navigation.html %}

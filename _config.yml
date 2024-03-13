@@ -5,6 +5,8 @@ author:
 collections:
   research_posts:
     output: true
+  news_posts:
+    output: true
 defaults:
   - scope:
       path: ""
