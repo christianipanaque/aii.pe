@@ -1,0 +1,13 @@
+author:
+  name: Christian Ipanaque
+  email: "christian.ipanaque@engineer.com"
+  url: https://linkedin.com/in/christianipanaque-ai
+collections:
+  research_posts:
+    output: true
+defaults:
+  - scope:
+      path: ""
+    values:
+      seo_description_max_words: 155
+      # image: /assets/images/ci-ai-logo.webp
