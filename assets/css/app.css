@@ -368,6 +368,10 @@ h2 {
   border-bottom: 1px solid var(--primary-color) !important;
 }
 
+.sub-title a {
+  border-bottom: 1px solid var(--primary-color);
+}
+
 @media (max-width: 900px) {
   h1,
   h2 {
