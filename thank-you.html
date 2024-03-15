@@ -62,12 +62,34 @@
         height: auto;
         width: 100%;
       }
+
+      .before-first-email {
+        text-align: center;
+        font-style: italic;
+        margin: 300px 0;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      @media (max-width: 900px) {
+        .before-first-email {
+          margin: 30px 0;
+        }
+
+        h1 {
+          font-size: 4em;
+          line-height: 1.2;
+          text-align: left;
+        }
+      }
     </style>
   </head>
   <body>
     <main>
       <header class="content">
-        <h1 style="text-align: center;">
+        <h1>
           <span class="light">Welcome to the</span>
           <span class="highlight-primary-color">A</span>rtificial
           <span class="highlight-primary-color">I</span>ntelligence
@@ -96,9 +118,9 @@
         </p>
       </section>
       <section>
-        <p style="text-align: center; font-style: italic; margin: 300px 0">
-          Before we send our first email, here's an small example of what you
-          can expect:
+        <p class="before-first-email">
+          Before we send our first email, here's a small example of what you can
+          expect:
         </p>
       </section>
       <section>
