@@ -176,7 +176,7 @@ body.indexfb MAIN {
 body.index0 MAIN > DIV,
 body.indexfb MAIN > DIV {
   min-height: 100vh;
-  padding: 5vh 2vw;
+  padding: 0 2vw;
 }
 
 @media (max-width: 900px) {
@@ -215,7 +215,7 @@ body.indexfb .main {
   }
 
   .main :where(p, span, h1, h2) {
-    text-align: center !important;
+    text-align: left;
   }
 
   .main .form {
@@ -270,6 +270,7 @@ h2 {
 .sub-title {
   font-size: 1.9rem;
   line-height: 2.5rem;
+  margin-bottom: 40px;
 }
 
 .form {
