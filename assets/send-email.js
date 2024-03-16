@@ -1,3 +1,30 @@
+// Before your test, mock the fetch function
+// const originalFetch = window.fetch; // Preserve the original fetch to restore it later
+
+// Mock fetch to simulate a successful response
+// window.fetch = () =>
+//   Promise.resolve({
+//     ok: true,
+//     json: () =>
+//       Promise.resolve({
+//         /* mock response data */
+//       }),
+//   });
+
+// After testing the success scenario, you can also mock a failed response
+// window.fetch = () =>
+//   Promise.resolve({
+//     ok: false,
+//     status: 404, // Example status code for failed request
+//     json: () =>
+//       Promise.resolve({
+//         /* mock error response data */
+//       }),
+//   });
+
+// Restore the original fetch function after tests
+// window.fetch = originalFetch;
+
 // Example JavaScript to capture form submissions and send them to the Google Sheet
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -47,14 +74,18 @@ document.addEventListener("DOMContentLoaded", function () {
           body: `email=${object.email}&origin=${origin}`, // Assuming 'json' is defined elsewhere
         };
 
-        console.log("requestOptions", requestOptions);
-
         // Perform the fetch request
         fetch(url, requestOptions)
           .then(function (response) {
             console.log("response", response);
             // Check if the request was successful
             if (response.ok) {
+              submitButton.style.backgroundColor = "#4CAF50"; // A shade of green
+              submitButton.style.color = "white";
+              submitButton.style.opacity = "1";
+              submitButton.style.border = "1px solid #4CAF50";
+              submitButton.innerHTML = "&#10003; Subscribed";
+
               // Redirect to the thank-you page
               window.location.href = "thank-you";
             } else {
@@ -63,6 +94,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
           })
           .catch(function (error) {
+            // Allow user to try again
+            emailInput.disabled = false;
+            submitButton.disabled = false;
+            submitButton.innerHTML = "Enroll Free Now";
+
             // Handle errors
             alert(
               "There was a problem with your submission. Please try again."
