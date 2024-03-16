@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Artificial Inteligence News
 description: AI News description
 ---
@@ -7,11 +6,5 @@ description: AI News description
 {% include header_navigation.html %} {% assign today = 'now' | date: "%Y-%m-%d"
 %} {% for post in site.news_posts %} {% assign post_date = post.date | date:
 "%Y-%m-%d" %} {% if post_date == today %}
-<header class="news-header">
-  <h1>{{ post.title }}</h1>
-  <p>{{ post.date | date: "%A, %B %d, %Y" }}</p>
-</header>
-<main class="news-main">
-  <section>{{ post.content }}</section>
-</main>
+{{ post.content }}
 {% endif %} {% endfor %} {% include footer_navigation.html %}
