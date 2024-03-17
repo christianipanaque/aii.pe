@@ -3,8 +3,28 @@ title: Artificial Intelligence News
 description: AI News description
 ---
 
-{% include header_navigation.html %} {% assign today = 'now' | date: "%Y-%m-%d"
-%} {% for post in site.news_posts %} {% assign post_date = post.date | date:
-"%Y-%m-%d" %} {% if post_date == today %}
-{{ post.content }}
-{% endif %} {% endfor %} {% include footer_navigation.html %}
+{% comment %}Include header navigation{% endcomment %}
+{% include header_navigation.html %}
+
+{% comment %}Assign today's date for comparison{% endcomment %}
+{% assign today = 'now' | date: "%Y-%m-%d" %}
+
+{% comment %}Initialize a variable to track if there are posts for today{% endcomment %}
+{% assign posts_for_today_found = false %}
+
+{% comment %}Loop through news posts{% endcomment %}
+{% for post in site.news_posts %}
+    {% assign post_date = post.date | date: "%Y-%m-%d" %}
+    {% if post_date == today %}
+        {% assign posts_for_today_found = true %}
+        {{ post.content }}
+    {% endif %}
+{% endfor %}
+
+{% comment %}Check if no posts were found for today and display a message{% endcomment %}
+{% if posts_for_today_found == false %}
+    <p>No news posts for today.</p>
+{% endif %}
+
+{% comment %}Include footer navigation{% endcomment %}
+{% include footer_navigation.html %}
