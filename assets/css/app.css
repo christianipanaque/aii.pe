@@ -1,7 +1,6 @@
 :root {
-  --all-font-family: Nunito Sans, -apple-system, BlinkMacSystemFont, Segoe UI,
-    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
-    Segoe UI Symbol;
+  --all-font-family: Lato, Verdana, sans-serif;
+  --cta-font-family: Nunito Sans, sans-serif;
   --body-font-color: #323330;
   --header-font-color: #323330;
   --header-h1-font-color: #323330;
@@ -12,19 +11,23 @@
 
   --cta-bg-color: #ca2828;
   --cta-font-color: #fff;
-  --cta-font-family: inherit;
   --cta-font-weight: 800;
 
   --body-font-weight: 300;
   --h1-font-weight: 800;
-  --h1-font-size: 5em;
-  --span-light-bold: 700;
+  --h1-font-size: 5rem;
+  --span-light-bold: bold;
   --span-heavy-bold: bold;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  font-family: var(--all-font-family);
+}
+
+* {
+  margin: 0;
 }
 
 body.index0 .main,
@@ -44,21 +47,14 @@ body.indexfb .sideground {
   text-align: center; /* Center the content */
 }
 
-nav div.sitename a {
-  color: #333;
-  background-color: var(--primary-color);
-  padding: 4px 8px !important;
-}
-
 body {
+  -webkit-font-smoothing: antialiased;
   color: var(--body-font-color);
   margin: 0;
   padding: 0;
   font-size: 16px;
-  /* border-top: 8px solid var(--primary-color); */
   line-height: 1.5em;
-  font-weight: var(--body-font-weight);
-  /* background-color: var(--primary-color); */
+  font-family: var(--all-font-family);
 }
 
 h1,
@@ -66,16 +62,22 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.sitename a {
+h6 {
   color: var(--header-font-color);
-  font-weight: var(--body-font-weight);
+  line-height: 1;
+  margin: 20px 0;
 }
 
 h1 {
+  font-family: var(--cta-font-family);
   color: var(--header-h1-font-color);
-  letter-spacing: -2px;
-  margin: 5px 0;
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
+  margin-top: 50px;
+}
+
+h2 {
+  font-weight: var(--body-font-weight);
 }
 
 .highlight-cta-color {
@@ -102,7 +104,6 @@ h1 {
 
 .contained {
   max-width: 780px;
-  margin: 0 auto;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -122,8 +123,6 @@ nav {
   text-transform: uppercase;
   text-align: right;
   color: #ccc;
-  margin-top: 1em;
-  margin-bottom: 1em;
   min-height: 2em;
   position: relative;
 }
@@ -131,15 +130,11 @@ nav {
 nav a {
   text-decoration: none;
   padding: 0 14px 0 12px;
-  line-height: 20px;
-  margin: 0;
 }
 
 nav div.sitename {
   text-transform: none;
-  font-size: 2em;
   float: left;
-  line-height: 1em;
 }
 
 nav div.sitename A {
@@ -226,7 +221,6 @@ body.indexfb .main {
   }
 
   .main .form {
-    margin: auto;
     flex-wrap: wrap;
   }
 }
@@ -260,16 +254,7 @@ body.indexfb .sideground img.preview {
   --red: var(--primary-color);
 }
 
-h1 {
-  font-size: var(--h1-font-size);
-  font-weight: var(--h1-font-weight);
-  line-height: 1.1em;
-}
-
 h2 {
-  font-size: 1.2em;
-  line-height: 1.4em;
-  margin-bottom: 2rem;
 }
 
 .main * {
@@ -277,9 +262,7 @@ h2 {
 }
 
 .sub-title {
-  font-size: 1.9rem;
-  line-height: 2.5rem;
-  margin-bottom: 40px;
+  margin: 20px 0;
 }
 
 .form {
@@ -293,15 +276,14 @@ h2 {
   color: rgb(0, 0, 0);
   tab-size: 4;
   box-sizing: border-box;
-  margin: 0px;
   appearance: none;
   display: block;
-  font-size: 1.2rem;
-  line-height: 1.5rem;
   padding: 0.75rem 1.25rem;
   width: 100%;
   border-radius: 6px 0px 0px 6px;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  font-family: var(--all-font-family);
+  font-size: 1.2rem;
 }
 
 .form input:focus {
@@ -320,15 +302,12 @@ h2 {
   background-color: var(--cta-bg-color);
   border: 1px solid var(--cta-bg-color);
   color: var(--cta-font-color);
-  font-size: 1.9rem;
-  font-family: var(--cta-font-family);
   font-weight: var(--cta-font-weight);
   white-space: pre;
   appearance: button;
   tab-size: 4;
   box-sizing: border-box;
   border: 1px solid transparent;
-  margin: 0px;
   cursor: pointer;
   display: block;
   height: 100%;
@@ -336,6 +315,8 @@ h2 {
   border-radius: 0px 6px 6px 0px;
   padding: 0.9rem 1rem;
   box-shadow: 0px 0px 2px var(--cta-bg-color);
+  font-family: var(--cta-font-family);
+  font-size: 1.7rem;
 }
 
 .form .button-red:hover {
@@ -378,7 +359,7 @@ h2 {
 
 .underline {
   text-decoration: underline;
-  text-underline-offset: 8px;
+  text-underline-offset: 3px;
 }
 
 .thick-underline {
@@ -396,9 +377,7 @@ h2 {
 }
 
 .top-eyebrow {
-  font-size: 0.7rem;
   font-weight: bold;
-  margin: 1rem 0 0 0;
   background-color: #e9e9e9;
   text-transform: uppercase;
   color: var(--body-font-color);
@@ -407,13 +386,10 @@ h2 {
 }
 
 .bottom-eyebrow {
-  margin: 0 0 1rem 0;
-  font-size: 1.2rem;
 }
 
 .footer {
-  font-size: 1.2rem;
-  margin-top: 2rem;
+  margin: 20px 0 40px 0;
 }
 
 .footer a {
@@ -425,65 +401,69 @@ h2 {
   border-bottom: 1px solid var(--primary-color);
 }
 
-.tool-logos {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 20px;
+.tool-logos,
+.university-logos {
+  font-size: 0.7rem;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Horizontally align all items in the container */
+  align-items: center; /* Vertically align items (optional) */
+  gap: 20px 40px; /* Space between items */
   padding: 0;
-  list-style: none;
-  align-items: center;
   margin: 0;
 }
 
-.tool-logos li {
-  /* text-align: center; */
-  font-size: 0.9em;
+.university-logos {
+  /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); */
 }
 
-.tool-logos img {
+.tool-logos {
+  justify-content: space-between;
+}
+
+.tool-logos li {
+  display: flex;
+  align-items: center;
+  gap: 0 5px;
+}
+
+.university-logos li {
+}
+
+.tool-logos img,
+.university-logos img {
   height: auto;
-  width: 100%;
+  max-width: 32px;
 }
 
 .red-circle {
   width: 10px;
   height: 10px;
-  margin-right: 5px;
 }
 
 @media (max-width: 1080px) {
   .red-circle {
     width: 10px;
     height: 10px;
-    margin-right: 5px;
   }
 
   h1 {
-    margin: 20px 0;
-    font-size: 4rem;
   }
 
   h2 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
   }
 
   .sub-title {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
   }
 
   .footer {
-    margin-top: 2rem;
   }
 
   .main {
-    padding: 1rem !important;
+    /* padding: 1rem !important; */
   }
 
   .footer {
-    font-size: 1rem;
-    margin-top: 1rem;
   }
 
   .top-eyebrow-container {
@@ -491,16 +471,13 @@ h2 {
   }
 
   .top-eyebrow {
-    font-size: 0.7rem;
-    margin: 0;
   }
 
   .bottom-eyebrow {
-    font-size: 1rem;
   }
 
   .tool-logos {
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: 0 70px;
+    /* grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); */
+    /* gap: 0 70px; */
   }
 }

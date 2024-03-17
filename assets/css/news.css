@@ -4,6 +4,7 @@
   --header-font-color: #323330;
   --header-h1-font-color: #ca2828;
   --primary-color: #ca2828;
+  --news-divider-color: #dddddd;
 
   /* layout */
   --left-panel-bg-color: inherit;
@@ -47,16 +48,8 @@ h4,
 h5,
 h6 {
   line-height: normal;
-  font-family: Poppins, sans-serif;
+  font-family: Nunito Sans, sans-serif;
   margin: 20px 0;
-}
-
-h2 {
-  margin-top: 80px;
-}
-
-h3 {
-  margin-top: 80px;
 }
 
 p {
@@ -66,6 +59,11 @@ p {
 .news-header,
 .news-main {
   padding: 0 5vw 0 5vw;
+}
+
+.news div:not(:last-child) {
+  border-bottom: 1px solid var(--news-divider-color);
+  padding: 20px 0;
 }
 
 h1,
