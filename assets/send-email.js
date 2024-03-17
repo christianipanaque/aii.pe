@@ -53,11 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
       var json = JSON.stringify(object);
       object.origin = origin;
 
-      // google analytics
-      gtag("set", "user_data", {
-        email: object.email,
-      });
-
       // Disable the input and the button
       emailInput.disabled = true;
       submitButton.disabled = true;
@@ -86,8 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
               submitButton.style.border = "1px solid #4CAF50";
               submitButton.innerHTML = "&#10003; Subscribed";
 
+              gtag("set", "user_data", {
+                email: object.email,
+              });
               // Redirect to the thank-you page
-              window.location.href = "thank-you";
+              window.location.href = `thank-you?email=${object.email}`;
             } else {
               // Handle errors
               throw new Error("Network response was not ok.");
