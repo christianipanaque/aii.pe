@@ -17,7 +17,7 @@
 
   --body-font-weight: 300;
   --h1-font-weight: 800;
-  --h1-font-size: 3em;
+  --h1-font-size: 5em;
   --span-light-bold: 700;
   --span-heavy-bold: bold;
 }
@@ -75,6 +75,7 @@ h6,
 h1 {
   color: var(--header-h1-font-color);
   letter-spacing: -2px;
+  margin: 5px 0;
 }
 
 .highlight-cta-color {
@@ -262,13 +263,13 @@ body.indexfb .sideground img.preview {
 h1 {
   font-size: var(--h1-font-size);
   font-weight: var(--h1-font-weight);
-  line-height: 1.2em;
+  line-height: 1.1em;
 }
 
 h2 {
-  font-size: 1.5em;
-  line-height: 1.5em;
-  margin-bottom: 3rem;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  margin-bottom: 2rem;
 }
 
 .main * {
@@ -395,13 +396,13 @@ h2 {
 }
 
 .top-eyebrow {
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-weight: bold;
-  margin: 2rem 0 0 0;
+  margin: 1rem 0 0 0;
   background-color: #e9e9e9;
   text-transform: uppercase;
   color: var(--body-font-color);
-  padding: 11px;
+  padding: 7px;
   border-radius: 6px;
 }
 
@@ -412,7 +413,7 @@ h2 {
 
 .footer {
   font-size: 1.2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .footer a {
@@ -445,21 +446,21 @@ h2 {
 }
 
 .red-circle {
-  width: 14px;
-  height: 14px;
-  margin-right: 7px;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
 }
 
 @media (max-width: 1080px) {
   .red-circle {
-    width: 11px;
-    height: 11px;
+    width: 10px;
+    height: 10px;
     margin-right: 5px;
   }
 
   h1 {
-    font-size: 2.8em;
     margin: 20px 0;
+    font-size: 4rem;
   }
 
   h2 {
@@ -490,7 +491,7 @@ h2 {
   }
 
   .top-eyebrow {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin: 0;
   }
 

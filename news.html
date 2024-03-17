@@ -28,7 +28,6 @@ description: AI News description
 
 {% comment %}Check if no posts were found for today and display the latest post{% endcomment %}
 {% if posts_for_today_found == false %}
-    <p>No news posts for today. Here's the latest post:</p>
     {{ latest_post.content }}
 {% endif %}
 
