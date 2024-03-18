@@ -179,7 +179,6 @@ body.indexfb MAIN {
 body.index0 MAIN > DIV,
 body.indexfb MAIN > DIV {
   min-height: 100vh;
-  padding: 0 2vw;
 }
 
 @media (max-width: 900px) {
@@ -205,6 +204,7 @@ body.indexfb .main {
   min-width: 540px;
   max-width: 840px;
   width: 40%;
+  padding: 0 2vw;
 }
 
 @media (max-width: 900px) {
@@ -214,6 +214,7 @@ body.indexfb .main {
     min-height: 0;
     width: 100%;
     max-width: 100%;
+    padding: 0 3vw 4vw 3vw;
   }
 
   .main :where(p, span, h1, h2) {
@@ -441,13 +442,15 @@ h2 {
   height: 10px;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 900px) {
   .red-circle {
     width: 10px;
     height: 10px;
   }
 
   h1 {
+    font-size: 4rem;
+    margin-top: 30px;
   }
 
   h2 {
