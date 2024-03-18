@@ -10,6 +10,14 @@
   <link rel="stylesheet" href="assets/css/app.css" />
   <link rel="stylesheet" href="assets/css/device.css" />
 
+  <!-- fonts begin -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900"
+    rel="stylesheet" />
+  <!-- fonts end -->
+
   <!-- Global Site Tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X0L0VF167H"></script>
   <script>
@@ -44,7 +52,8 @@
       gtag('event', 'conversion', {
         'send_to': 'AW-16488200004',
         'enhanced_conversions_data': {
-          'email': hashedEmail,
+          'email': email,
+          'sha256_email_address': hashedEmail,
         }
       });
 
@@ -69,17 +78,6 @@
       });
     }
   </script>
-  <style>
-    h2,
-    h3 {
-      font-weight: 500;
-    }
-
-    .light {
-      font-weight: 300;
-    }
-  </style>
-  <link href="assets/css/prism.css" rel="stylesheet" />
   <link rel="shortcut icon" href="assets/images/favicon.ico" />
   <style>
     body {
@@ -87,12 +85,19 @@
       background-color: white;
     }
 
-    .content {
+    .content,
+    .header-content {
       padding: 0 15vw 0 15vw;
     }
 
+    .header-content {
+      margin: 60px 0;
+    }
+
     @media (max-width: 900px) {
-      .content {
+
+      .content,
+      .header-content {
         padding: 0 5vw 0 5vw;
       }
     }
@@ -109,52 +114,68 @@
     }
 
     h1 {
+      font-size: 5rem;
+      line-height: 1.2;
+      margin: 0px 0 20px 0;
+    }
+
+    h2 {
+      font-weight: bold;
+      margin: 30px 0;
+    }
+
+    .black-box {
       text-align: center;
+      padding: 20px;
+      background-color: #e9e9e9;
+      line-height: 1.5;
+    }
+
+    .phrase-header {
+      display: block;
     }
 
     @media (max-width: 900px) {
+      .phrase-header {
+        display: inline;
+      }
+
       .before-first-email {
         margin: 30px 0;
       }
 
       h1 {
         font-size: 4em;
-        line-height: 1.2;
-        text-align: left;
+        line-height: 1;
       }
     }
   </style>
+  <link href="assets/css/prism.css" rel="stylesheet" />
 </head>
 
 <body>
   <main>
-    <header class="content">
-      <h1>
-        <span class="light">Welcome to the</span>
-        <span class="highlight-primary-color">A</span>rtificial
-        <span class="highlight-primary-color">I</span>ntelligence
-        <span class="highlight-primary-color">I</span>nstitute of
-        <span class="highlight-primary-color">Peru</span>
+    <header class="header-content">
+      <h1> You are now an <span class="phrase-header"><span class="underline primary-color-underline">AI Engineer</span>
+          of <a style="text-decoration: underline" class="highlight-primary-color light-bold"
+            href="https://aii.pe">aii.pe</a></span>
       </h1>
+      <h2><a class="underline" href="https://github.com/aii-pe" style="color: inherit;">Get started</a> on your first
+        artificial intelligence
+        project in our Github:
+      </h2>
+      <p>
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com/aii-pe" data-size="large" data-show-count="true"
+          aria-label="Follow @aii-pe on GitHub">Follow @aii-pe</a>
+      </p>
     </header>
     <section>
-      <p style="
-            text-align: center;
-            padding: 20px;
-            background-color: #323330;
-            color: white;
-            line-height: 1.5;
-          ">
+      <p class="black-box">
         Learn AI faster with your friends. Help us by sharing
         <a style="text-decoration: underline" class="highlight-primary-color light-bold"
           href="https://aii.pe">aii.pe</a>
         in social networks.
-      </p>
-    </section>
-    <section>
-      <p class="before-first-email">
-        Before we send our first email, here's a small example of what you can
-        expect:
       </p>
     </section>
     <section>
@@ -728,6 +749,8 @@
       </p>
     </section>
   </main>
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
   <script src="assets/prism.js"></script>
 </body>
 
