@@ -83,6 +83,7 @@
     body {
       border: 0;
       background-color: white;
+      line-height: 1.5;
     }
 
     .content,
@@ -124,15 +125,29 @@
       margin: 30px 0;
     }
 
+    h3 {
+      line-height: 1.5;
+    }
+
+    p {
+      margin: 20px 0;
+    }
+
     .black-box {
       text-align: center;
       padding: 20px;
       background-color: #e9e9e9;
       line-height: 1.5;
+      margin: 0;
     }
 
     .phrase-header {
       display: block;
+    }
+
+    ul li,
+    ol li {
+      margin: 20px 0;
     }
 
     @media (max-width: 900px) {
@@ -201,7 +216,7 @@
       <h3 id="target-variable-name">Target Variable Name:</h3>
       <p>
         A suitable target variable name for the model could be
-        <code>Energy Cost Reduction Score</code>. This score would be a
+        <code class="highlighter-rouge language-plaintext">Energy Cost Reduction Score</code>. This score would be a
         representation of the potential energy cost savings achievable through
         following the recommended advice provided by the system.
       </p>
@@ -209,7 +224,7 @@
         Importance of Target Variable:
       </h3>
       <p>
-        The <code>Energy Cost Reduction Score</code> is crucial for this
+        The <code class="highlighter-rouge language-plaintext">Energy Cost Reduction Score</code> is crucial for this
         project as it encapsulates the ultimate goal of helping households in
         Peru reduce their energy costs. By quantifying the potential savings
         into a single score, users can easily understand and compare the
@@ -219,7 +234,8 @@
       <ul>
         <li>
           If a household receives an
-          <code>Energy Cost Reduction Score</code> of 80%, it indicates that
+          <code class="highlighter-rouge language-plaintext">Energy Cost Reduction Score</code> of 80%, it indicates
+          that
           the recommended actions have the potential to reduce their energy
           costs by 80%.
         </li>
@@ -231,7 +247,7 @@
       </ul>
       <h3 id="user-decision-making">User Decision-making:</h3>
       <p>
-        Based on the <code>Energy Cost Reduction Score</code>, users can
+        Based on the <code class="highlighter-rouge language-plaintext">Energy Cost Reduction Score</code>, users can
         prioritize which recommendations to implement. For example, a
         household with a low score may focus on adopting more energy-efficient
         appliances, while a high-scoring household may consider investing in
@@ -280,7 +296,8 @@
       <p>
         This Python script generates a mock dataset with fictitious data
         representing household features and the corresponding
-        <code>Energy Cost Reduction Score</code>, creates and trains a Random
+        <code class="highlighter-rouge language-plaintext">Energy Cost Reduction Score</code>, creates and trains a
+        Random
         Forest Regressor model, predicts the target variable for the test set,
         and evaluates the model&#39;s performance using Mean Absolute Error.
         By defining clear features and a target variable based on the
@@ -296,7 +313,8 @@
         Importance of Secondary Target Variable:
       </h3>
       <p>
-        The <code>Energy Efficiency Improvement Potential Score</code> could
+        The <code class="highlighter-rouge language-plaintext">Energy Efficiency Improvement Potential Score</code>
+        could
         play a crucial role in enhancing the predictive model&#39;s accuracy
         and providing valuable insights. This score would quantify the
         potential for improving energy efficiency within a household,
@@ -311,13 +329,15 @@
       </h3>
       <p>
         The
-        <code>Energy Efficiency Improvement Potential Score</code> complements
-        the <code>Energy Cost Reduction Score</code> by providing a deeper
+        <code class="highlighter-rouge language-plaintext">Energy Efficiency Improvement Potential Score</code>
+        complements
+        the <code class="highlighter-rouge language-plaintext">Energy Cost Reduction Score</code> by providing a deeper
         understanding of where and how energy efficiency improvements can be
         made within a household. While the
-        <code>Energy Cost Reduction Score</code> focuses on the overall
+        <code class="highlighter-rouge language-plaintext">Energy Cost Reduction Score</code> focuses on the overall
         potential savings, the
-        <code>Energy Efficiency Improvement Potential Score</code> delves into
+        <code class="highlighter-rouge language-plaintext">Energy Efficiency Improvement Potential Score</code> delves
+        into
         specific areas for optimization, guiding users towards targeted
         actions that can maximize energy savings and sustainability efforts.
       </p>
@@ -325,7 +345,7 @@
       <ul>
         <li>
           A household with a high
-          <code>Energy Efficiency Improvement Potential Score</code> of 90%
+          <code class="highlighter-rouge language-plaintext">Energy Efficiency Improvement Potential Score</code> of 90%
           may benefit from upgrading to energy-efficient appliances, improving
           insulation, and optimizing heating/cooling settings for significant
           long-term energy savings.
@@ -340,7 +360,7 @@
       <h3 id="user-decision-making-1">User Decision-making:</h3>
       <p>
         Users can leverage the
-        <code>Energy Efficiency Improvement Potential Score</code> to
+        <code class="highlighter-rouge language-plaintext">Energy Efficiency Improvement Potential Score</code> to
         prioritize energy efficiency upgrades based on specific
         recommendations tailored to their household profile. For instance, a
         user with a high score in heating/cooling systems optimization could
@@ -401,8 +421,8 @@
       <p>
         This Python script generates a mock dataset with fictitious data
         representing household features,
-        <code>Energy Cost Reduction Score</code>, and
-        <code>Energy Efficiency Improvement Potential Score</code>. It then
+        <code class="highlighter-rouge language-plaintext">Energy Cost Reduction Score</code>, and
+        <code class="highlighter-rouge language-plaintext">Energy Efficiency Improvement Potential Score</code>. It then
         creates and trains two separate Random Forest Regressor models for
         each target variable, predicts the target variable values for the test
         set, and evaluates the models&#39; performance using Mean Absolute
@@ -418,7 +438,8 @@
         Importance of Third Target Variable:
       </h3>
       <p>
-        The <code>Carbon Footprint Reduction Potential Score</code> could be
+        The <code class="highlighter-rouge language-plaintext">Carbon Footprint Reduction Potential Score</code> could
+        be
         instrumental in enhancing the predictive model&#39;s accuracy and
         providing holistic insights into household energy practices. This
         score would quantify the potential for reducing the carbon footprint
@@ -433,9 +454,9 @@
       </h3>
       <p>
         The
-        <code>Carbon Footprint Reduction Potential Score</code> complements
-        the <code>Energy Cost Reduction Score</code> and
-        <code>Energy Efficiency Improvement Potential Score</code> by
+        <code class="highlighter-rouge language-plaintext">Carbon Footprint Reduction Potential Score</code> complements
+        the <code class="highlighter-rouge language-plaintext">Energy Cost Reduction Score</code> and
+        <code class="highlighter-rouge language-plaintext">Energy Efficiency Improvement Potential Score</code> by
         addressing the environmental impact of energy consumption. While the
         primary target focuses on cost savings and the secondary target
         emphasizes efficiency improvements, the third target variable shifts
@@ -448,7 +469,8 @@
       <ul>
         <li>
           A household with a high
-          <code>Carbon Footprint Reduction Potential Score</code> of 90% may
+          <code class="highlighter-rouge language-plaintext">Carbon Footprint Reduction Potential Score</code> of 90%
+          may
           benefit from transitioning to renewable energy sources, optimizing
           energy usage during peak hours, and reducing overall energy
           consumption for substantial carbon footprint reductions.
@@ -463,7 +485,8 @@
       <h3 id="user-decision-making-2">User Decision-making:</h3>
       <p>
         Users can leverage the
-        <code>Carbon Footprint Reduction Potential Score</code> to prioritize
+        <code class="highlighter-rouge language-plaintext">Carbon Footprint Reduction Potential Score</code> to
+        prioritize
         actions that align with their sustainability goals. For instance, a
         high score in renewable energy adoption may prompt a household to
         invest in solar panels or switch to a green energy provider. By
@@ -530,9 +553,9 @@
   </code></pre>
       <p>
         This Python script generates a mock dataset with fictitious data for
-        household features, <code>Energy Cost Reduction Score</code>,
-        <code>Energy Efficiency Improvement Potential Score</code>, and
-        <code>Carbon Footprint Reduction Potential Score</code>. It creates
+        household features, <code class="highlighter-rouge language-plaintext">Energy Cost Reduction Score</code>,
+        <code class="highlighter-rouge language-plaintext">Energy Efficiency Improvement Potential Score</code>, and
+        <code class="highlighter-rouge language-plaintext">Carbon Footprint Reduction Potential Score</code>. It creates
         and trains Random Forest Regressor models for each target variable,
         predicts the target variable values for the test set, and evaluates
         the models&#39; performance using Mean Absolute Error. By
@@ -576,7 +599,8 @@
             </li>
             <li>
               <em>Solution</em>: The
-              <code>Energy Cost Reduction Score</code> provides Maria with a
+              <code class="highlighter-rouge language-plaintext">Energy Cost Reduction Score</code> provides Maria with
+              a
               clear roadmap to cut down her energy costs by implementing
               efficient practices and renewable energy sources.
             </li>
@@ -607,7 +631,7 @@
             </li>
             <li>
               <em>Solution</em>: The
-              <code>Carbon Footprint Reduction Potential Score</code>
+              <code class="highlighter-rouge language-plaintext">Carbon Footprint Reduction Potential Score</code>
               highlights the areas where Javier can make eco-friendly choices
               to minimize his household&#39;s carbon emissions.
             </li>
@@ -640,7 +664,7 @@
             </li>
             <li>
               <em>Solution</em>: The
-              <code>Energy Efficiency Improvement Potential Score</code>
+              <code class="highlighter-rouge language-plaintext">Energy Efficiency Improvement Potential Score</code>
               guides Diego towards adopting advanced technologies and
               practices to boost his household&#39;s energy efficiency.
             </li>
@@ -738,14 +762,25 @@
         and empower individuals to make impactful changes in their lives and
         the environment.
       </p>
-      <p class="footer">
-        Visit
+    </section>
+    <section>
+      <p class="black-box">Visit
         <a class="highlight-primary-color light-bold" href="https://aii.pe">aii.pe</a>
-        to gain exclusive access to <span class="light-bold">resources</span>,
-        <span class="light-bold">classes</span> and
+        to gain exclusive access to <span class="light-bold">courses</span>,
+        <span class="light-bold">projects</span> and
         <span class="light-bold">workshops</span> tailored to
         <span class="light-bold">Peru's unique environment</span> and
         <span class="light-bold">challenges</span>.
+      </p>
+      <p class="black-box" style="padding: 5px 0"><a class="underline" href="https://github.com/aii-pe" style="color: inherit;">Get started</a>
+        on your first
+        artificial intelligence
+        project in our Github:
+      </p>
+      <p class="black-box" style="padding: 5px 0 80px 0">
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com/aii-pe" data-size="large" data-show-count="true"
+          aria-label="Follow @aii-pe on GitHub">Follow @aii-pe</a>
       </p>
     </section>
   </main>
