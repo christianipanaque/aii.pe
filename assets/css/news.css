@@ -66,6 +66,11 @@ p {
   padding: 20px 0;
 }
 
+.news div img {
+  width: 100%;
+  height: auto;
+}
+
 h1,
 h2 {
   color: var(--header-h1-font-color);
