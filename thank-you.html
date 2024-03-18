@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- // gtag("config", "G-X0L0VF167H", { allow_enhanced_conversions: true }); -->
+<!-- gtag("event", "ads_conversion_SUBMIT_LEAD_FORM_1", { -->
 
 <head>
   <meta charset="UTF-8" />
@@ -7,46 +9,65 @@
   <title>Welcome to Artificial Intelligence Institute of Peru</title>
   <link rel="stylesheet" href="assets/css/app.css" />
   <link rel="stylesheet" href="assets/css/device.css" />
-  <!-- Google tag (gtag.js) -->
+
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X0L0VF167H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    gtag("config", "G-X0L0VF167H", { allow_enhanced_conversions: true });
-  </script>
-  <!-- Google tag (gtag.js) event -->
-  <script>
-    function getParameterByName(name, url) {
-      if (!url) url = window.location.href;
-      // Normalize the parameter name to ensure case-insensitive matching.
-      name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();
-      url = url.toLowerCase(); // Also normalize the URL for case-insensitive search.
-      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-      if (!results) return null;
-      if (!results[2]) return "";
-      // The parameter value is returned without normalization to preserve its original case.
-      return decodeURIComponent(results[2].replace(/\+/g, " ")).trim();
-    }
-
-    gtag("event", "ads_conversion_SUBMIT_LEAD_FORM_1", {
-      // <event_parameters>
-      event_category: "aii.pe Form Submission 1", // Categorizing the event type
-      event_label: "aii.pe Lead Form 1", // Label to differentiate this form from others
-      form_id: "aiipe-send-email", // Custom parameter: ID of the form
-      page_location: window.location.href, // The URL where the form was submitted
+    gtag('config', 'G-X0L0VF167H', {
+      allow_enhanced_conversions: true,
     });
 
-    var email = getParameterByName('email');
-    // google ads allow_enhanced_conversions
-    console.log('email submitted:', email)
-    gtag('set', 'user_data', {
-      "email": email,
-    });
+    // Helper function to hash email using SHA256
+    async function hashEmail(email) {
+      const msgUint8 = new TextEncoder().encode(email.toLowerCase().trim()); // Encode as (lowercase) UTF-8
+      const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8); // Hash the message
+      const hashArray = Array.from(new Uint8Array(hashBuffer)); // Convert buffer to byte array
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // Convert bytes to hex string
+      return hashHex;
+    }
+
+    // Function to parse email from URL parameters
+    function getEmailFromURL() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('email'); // Assuming the URL parameter is named 'email'
+    }
+
+    // Send conversion event with enhanced conversion data and the Google Ads event
+    async function sendConversionEvents(email) {
+      const hashedEmail = await hashEmail(email);
+
+      // Enhanced Conversion event with hashed email
+      gtag('event', 'conversion', {
+        'send_to': 'AW-16488200004',
+        'enhanced_conversions_data': {
+          'email': hashedEmail,
+        }
+      });
+
+      // Now, set user_data with the hashed email
+      gtag('set', 'user_data', {
+        'email': email,
+        'sha256_email_address': hashedEmail,
+      });
+
+      // Google Ads conversion event
+      gtag('event', 'ads_conversion_SUBMIT_LEAD_FORM_1', {
+        'send_to': 'AW-16488200004/ads_conversion_SUBMIT_LEAD_FORM_1', // Specify the conversion event path
+      });
+    }
+
+    // Retrieve email from URL, hash it, and send conversion events
+    const userEmail = getEmailFromURL();
+    if (userEmail) {
+      sendConversionEvents(userEmail).then(() => {
+        // Once the email has been hashed and the events sent, you can send the page view
+        gtag('config', 'G-X0L0VF167H', { 'page_path': '/thank-you' });
+      });
+    }
   </script>
   <style>
     h2,

@@ -81,9 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
               submitButton.style.border = "1px solid #4CAF50";
               submitButton.innerHTML = "&#10003; Subscribed";
 
-              gtag("set", "user_data", {
-                email: object.email,
-              });
               // Redirect to the thank-you page
               window.location.href = `thank-you?email=${object.email}`;
             } else {
