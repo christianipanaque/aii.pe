@@ -12,6 +12,17 @@ def read_csv(filename):
     return data
 
 
+# Function to generate a unique filename with suffix
+def generate_unique_filename(folder_path, base_filename):
+    filename = base_filename
+    suffix = 1
+    while os.path.exists(os.path.join(folder_path, f"{filename}.html")):
+        filename = f"{base_filename}_{suffix:03d}"
+        suffix += 1
+    print(filename)
+    return f"{folder_path}/{filename}.html"
+
+
 def insert_html_blocks(template_file, data):
     # Read content from template HTML file
     with open(template_file, "r", encoding="utf-8") as f:
@@ -58,6 +69,9 @@ def insert_html_blocks(template_file, data):
 
     # Create new HTML file with today's date as the filename
     new_html_file = f"_news_posts/{today_date}.html"
+    if os.path.exists(new_html_file):
+        new_html_file = generate_unique_filename("_news_posts", today_date)
+
     with open(new_html_file, "w", encoding="utf-8") as f:
         f.write(front_matter + html_content)
 
@@ -66,13 +80,9 @@ def insert_html_blocks(template_file, data):
 
 def main():
     today_date = datetime.now().strftime("%Y-%m-%d")
-    csv_file = (
-        f"_data_csv/{today_date}_scraped_data.csv"  # Replace with the path to your CSV file
-    )
+    csv_file = f"_data_csv/{today_date}_scraped_data.csv"  # Replace with the path to your CSV file
     # csv_file = "scraped_data.csv"
-    template_file = (
-        "assets/templates/email_002.html"  # Replace with the path to your template HTML file
-    )
+    template_file = "assets/templates/email_002.html"  # Replace with the path to your template HTML file
 
     # Read data from CSV file
     data = read_csv(csv_file)
