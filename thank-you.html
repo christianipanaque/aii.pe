@@ -2,6 +2,25 @@
 <html lang="en">
 <!-- // gtag("config", "G-X0L0VF167H", { allow_enhanced_conversions: true }); -->
 <!-- gtag("event", "ads_conversion_SUBMIT_LEAD_FORM_1", { -->
+<!-- Google tag (gtag.js) event - delayed navigation helper -->
+<!-- <script>
+  // Helper function to delay opening a URL until a gtag event is sent.
+  // Call it in response to an action that should navigate to a URL.
+  function gtagSendEvent(url) {
+    var callback = function () {
+      if (typeof url === 'string') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion_event_signup', {
+      'event_callback': callback,
+      'event_timeout': 2000,
+      // <event_parameters>
+    });
+    return false;
+  }
+</script> -->
+
 
 <head>
   <meta charset="UTF-8" />
@@ -60,12 +79,13 @@
       gtag('set', 'user_data', {
         'email': userEmail
       });
+
+      // Google Ads conversion event
+      gtag('event', 'ads_conversion_SUBMIT_LEAD_FORM_1', {
+        'send_to': 'AW-16488200004/ads_conversion_SUBMIT_LEAD_FORM_1', // Specify the conversion event path
+      });
     }
 
-    // Google Ads conversion event
-    gtag('event', 'ads_conversion_SUBMIT_LEAD_FORM_1', {
-      'send_to': 'AW-16488200004/ads_conversion_SUBMIT_LEAD_FORM_1', // Specify the conversion event path
-    });
 
   </script>
   <link rel="shortcut icon" href="assets/images/favicon.ico" />
