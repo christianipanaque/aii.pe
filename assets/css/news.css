@@ -62,8 +62,13 @@ p {
 }
 
 .news div:not(:last-child) {
+  border-top: 1px solid var(--news-divider-color);
   border-bottom: 1px solid var(--news-divider-color);
   padding: 20px 0;
+}
+
+.news div p:last-of-type {
+  text-align: right;
 }
 
 .news div img {
