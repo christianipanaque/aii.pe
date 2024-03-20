@@ -80,6 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
               submitButton.style.opacity = "1";
               submitButton.style.border = "1px solid #4CAF50";
               submitButton.innerHTML = "&#10003; Subscribed";
+              gtag("event", "form_submit", {
+                send_to: "AW-16488200004/ads_conversion_SUBMIT_LEAD_FORM_1", // Specify the conversion event path
+              });
 
               // Redirect to the thank-you page
               window.location.href = `thank-you?email=${object.email}`;
