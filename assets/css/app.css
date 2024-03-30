@@ -487,6 +487,10 @@ ul.custom-checklist-no li::before {
   margin-left: -1em; /* Align with list content */
 }
 
+.cross-out-price {
+  text-decoration: line-through;
+}
+
 @media (max-width: 900px) {
   .red-circle {
     width: 10px;
