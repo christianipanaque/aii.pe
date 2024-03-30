@@ -42,9 +42,19 @@ body.indexfb .sideground {
 }
 
 .gradient-bg {
-  background-image: linear-gradient(to top left, #000000, #ca2828);
+  background-image: url(/assets/images/aiipe-side-image.png)
   color: white; /* Adjust text color for better visibility */
-  text-align: center; /* Center the content */
+}
+
+.side-image {
+  overflow: hidden; /* Hide parts of the image that exceed container bounds */
+}
+
+.side-image img {
+  height: auto;
+  width: 100%;
+  object-fit: cover; /* Cover the container fully, may be cropped */
+  display: block; /* Remove any default margins or spacing */
 }
 
 body {
@@ -55,6 +65,7 @@ body {
   font-size: 16px;
   line-height: 1.5em;
   font-family: var(--all-font-family);
+  background-color: #000;
 }
 
 h1,
@@ -65,7 +76,21 @@ h5,
 h6 {
   color: var(--header-font-color);
   line-height: 1;
-  margin: 30px 0;
+  /* margin: 30px 0; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 20px 0 20px 0;
+}
+
+li {
+  margin: 10px 0 10px 0;
 }
 
 h1 {
@@ -76,8 +101,9 @@ h1 {
   margin-top: 50px;
 }
 
-h2 {
-  font-weight: var(--body-font-weight);
+h2,
+p {
+  line-height: 1.3;
 }
 
 .highlight-cta-color {
@@ -230,10 +256,8 @@ body.index0 .sideground,
 body.indexfb .sideground {
   background-color: var(--primary-color);
   order: 2;
-  padding-top: 8vh;
+  /* padding-top: 8vh; */
   flex: 2;
-  display: flex;
-  justify-content: center;
 }
 
 @media (max-width: 900px) {
@@ -325,7 +349,7 @@ h2 {
 }
 
 .form .button-red:active {
-  background-color: #9b1f1f; /* Even darker shade to simulate a click effect */
+  background-color: #9b1f1f;
 }
 
 .form input:disabled {
@@ -440,6 +464,35 @@ h2 {
 .red-circle {
   width: 10px;
   height: 10px;
+}
+
+ul.custom-checklist-yes {
+  list-style-type: none; /* Remove default bullets */
+  padding: 0 0 0 20px;
+}
+
+ul.custom-checklist-yes li::before {
+  content: "✓"; /* Unicode checkmark */
+  color: var(--primary-color); /* Checkmark color */
+  font-weight: bold; /* Make it bold */
+  display: inline-block;
+  width: 1em; /* Space before text */
+  margin-left: -1em; /* Align with list content */
+  margin-right: 5px;
+}
+
+ul.custom-checklist-no {
+  list-style-type: none; /* Remove default bullets */
+  padding: 0;
+}
+
+ul.custom-checklist-no li::before {
+  content: "x"; /* Unicode checkmark */
+  color: black; /* Checkmark color */
+  font-weight: bold; /* Make it bold */
+  display: inline-block;
+  width: 1em; /* Space before text */
+  margin-left: -1em; /* Align with list content */
 }
 
 @media (max-width: 900px) {
