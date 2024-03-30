@@ -41,10 +41,10 @@ body.indexfb .sideground {
   background-color: #000 !important;
 }
 
-.gradient-bg {
-  background-image: url(/assets/images/aiipe-side-image.png)
-  color: white; /* Adjust text color for better visibility */
-}
+/* .gradient-bg {
+  background-image: url(/assets/images/aiipe-side-image.png);
+  color: white; 
+} */
 
 .side-image {
   overflow: hidden; /* Hide parts of the image that exceed container bounds */
@@ -279,9 +279,6 @@ body.indexfb .sideground img.preview {
   --red: var(--primary-color);
 }
 
-h2 {
-}
-
 .main * {
   text-align: left;
 }
@@ -402,9 +399,6 @@ h2 {
   border-radius: 6px;
 }
 
-.bottom-eyebrow {
-}
-
 .footer {
   margin: 30px 0 40px 0;
 }
@@ -430,10 +424,6 @@ h2 {
   margin: 0;
 }
 
-.university-logos {
-  /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); */
-}
-
 .tool-logos {
   justify-content: space-around;
 }
@@ -442,9 +432,6 @@ h2 {
   display: flex;
   align-items: center;
   gap: 0 5px;
-}
-
-.university-logos li {
 }
 
 .tool-logos img,
@@ -461,11 +448,12 @@ h2 {
 ul.custom-checklist-yes {
   list-style-type: none; /* Remove default bullets */
   padding: 0 0 0 20px;
+  margin-bottom: 20px;
 }
 
 ul.custom-checklist-yes li::before {
-  content: "✓"; /* Unicode checkmark */
-  color: var(--primary-color); /* Checkmark color */
+  content: "✓"; 
+  color: var(--primary-color); 
   font-weight: bold; /* Make it bold */
   display: inline-block;
   width: 1em; /* Space before text */
@@ -479,8 +467,8 @@ ul.custom-checklist-no {
 }
 
 ul.custom-checklist-no li::before {
-  content: "x"; /* Unicode checkmark */
-  color: black; /* Checkmark color */
+  content: "x"; 
+  color: black; 
   font-weight: bold; /* Make it bold */
   display: inline-block;
   width: 1em; /* Space before text */
@@ -502,34 +490,7 @@ ul.custom-checklist-no li::before {
     margin-top: 30px;
   }
 
-  h2 {
-  }
-
-  .sub-title {
-  }
-
-  .footer {
-  }
-
-  .main {
-    /* padding: 1rem !important; */
-  }
-
-  .footer {
-  }
-
   .top-eyebrow-container {
     justify-content: center;
-  }
-
-  .top-eyebrow {
-  }
-
-  .bottom-eyebrow {
-  }
-
-  .tool-logos {
-    /* grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); */
-    /* gap: 0 70px; */
   }
 }
