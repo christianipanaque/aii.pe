@@ -39,12 +39,33 @@ body.indexfb .main {
 body.index0 .sideground,
 body.indexfb .sideground {
   background-color: #000 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* .gradient-bg {
+.gradient-bg {
+  position: relative; /* Essential for positioning the ::before pseudo-element */
   background-image: url(/assets/images/aiipe-side-image.png);
   color: white; 
-} */
+}
+
+.gradient-bg::before {
+  content: ""; /* Required for the pseudo-element to be generated */
+  position: absolute; /* Position relative to the .bg element */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+  z-index: 0; /* Ensure it stays under the content */
+}
+
+/* Ensure content on .bg is positioned above the overlay */
+.gradient-bg * {
+  position: relative;
+  z-index: 1;
+}
 
 .side-image {
   overflow: hidden; /* Hide parts of the image that exceed container bounds */
@@ -122,7 +143,7 @@ p {
   font-weight: var(--span-heavy-bold);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .nomobile {
     display: none;
   }
@@ -184,7 +205,7 @@ main {
 }
 
 /* PAGE SPECIFIC STYLES */
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   body.index0,
   body.indexfb {
     border-top-width: 0;
@@ -207,7 +228,7 @@ body.indexfb MAIN > DIV {
   min-height: 100vh;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   body.index0 MAIN > DIV,
   body.indexfb MAIN > DIV {
     min-height: auto;
@@ -215,7 +236,7 @@ body.indexfb MAIN > DIV {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   body.index0 MAIN,
   body.indexfb MAIN {
     flex-direction: column;
@@ -233,7 +254,7 @@ body.indexfb .main {
   padding: 0 2vw;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   body.index0 .main,
   body.indexfb .main {
     min-width: 0;
@@ -260,11 +281,12 @@ body.indexfb .sideground {
   flex: 2;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   body.index0 .sideground,
   body.indexfb .sideground {
     overflow: none;
     padding: 5vh 0;
+    order: 1;
   }
 }
 
@@ -313,7 +335,7 @@ body.indexfb .sideground img.preview {
   border-radius: 6px 0px 0px 6px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .form input {
     border-radius: 6px 6px 0px 0px;
     text-align: center;
@@ -359,7 +381,7 @@ body.indexfb .sideground img.preview {
   box-shadow: 0px 0px 2px #bbbbbb;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .form .button-red {
     width: 100%;
     border-radius: 0px 0px 6px 6px;
@@ -479,7 +501,7 @@ ul.custom-checklist-no li::before {
   text-decoration: line-through;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .red-circle {
     width: 10px;
     height: 10px;
