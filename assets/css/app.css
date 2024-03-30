@@ -344,14 +344,6 @@ h2 {
   font-size: 1.7rem;
 }
 
-.form .button-red:hover {
-  background-color: #b02424; /* Darker shade on hover for visual feedback */
-}
-
-.form .button-red:active {
-  background-color: #9b1f1f;
-}
-
 .form input:disabled {
   background-color: #f2f2f2; /* Light grey background to indicate it's not active */
   color: #cccccc; /* Dimmed text color */
@@ -361,7 +353,7 @@ h2 {
 }
 
 /* Style for disabled buttons */
-.form button:disabled {
+.form .button-red:disabled {
   background-color: #cccccc; /* Grey background to show it's not clickable */
   color: #666666; /* Darker text color but still shows it's disabled */
   border: 1px solid #bbbbbb; /* Slightly darker border for depth */

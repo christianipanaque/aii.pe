@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
               submitButton.style.color = "white";
               submitButton.style.opacity = "1";
               submitButton.style.border = "1px solid #4CAF50";
-              submitButton.innerHTML = "&#10003; Subscribed";
+              submitButton.innerHTML = "&#10003; Ready To Buy";
 
               gtag("event", "form_submit");
 
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Allow user to try again
             emailInput.disabled = false;
             submitButton.disabled = false;
-            submitButton.innerHTML = "Enroll Free Now";
+            submitButton.innerHTML = "Buy This";
 
             // Handle errors
             alert(
