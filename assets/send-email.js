@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
 
       // Change the button text to show loading dots
-      submitButton.innerHTML = "Joining...";
+      submitButton.innerHTML = "Validating...";
 
       // Construct the json form data
       var formData = new FormData(form);
@@ -79,12 +79,12 @@ document.addEventListener("DOMContentLoaded", function () {
               submitButton.style.color = "white";
               submitButton.style.opacity = "1";
               submitButton.style.border = "1px solid #4CAF50";
-              submitButton.innerHTML = "&#10003; Ready To Buy";
+              submitButton.innerHTML = "&#10003; Ready To Pre-Order";
 
               gtag("event", "form_submit");
 
               // Redirect to the thank-you page
-              window.location.href = `thank-you?email=${object.email}`;
+              window.location.href = "https://buy.stripe.com/5kA00yepOaCF8Mg146";
             } else {
               // Handle errors
               throw new Error("Network response was not ok.");
