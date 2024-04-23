@@ -47,7 +47,7 @@ body.indexfb .sideground {
 .gradient-bg {
   position: relative; /* Essential for positioning the ::before pseudo-element */
   background-image: url(/assets/images/aiipe-side-image.png);
-  color: white; 
+  color: white;
 }
 
 .gradient-bg::before {
@@ -312,6 +312,7 @@ body.indexfb .sideground img.preview {
 .form {
   display: flex;
   max-width: 100%;
+  flex-wrap: wrap;
 }
 
 .form input {
@@ -324,15 +325,17 @@ body.indexfb .sideground img.preview {
   display: block;
   padding: 0.75rem 1.25rem;
   width: 100%;
-  border-radius: 6px 0px 0px 6px;
+  /* border-radius: 6px 0px 0px 6px; */
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   font-family: var(--all-font-family);
   font-size: 1.2rem;
+  border-radius: 6px 6px 0px 0px;
+  text-align: center;
 }
 
 .form input:focus {
   border: 2px solid var(--cta-bg-color);
-  border-radius: 6px 0px 0px 6px;
+  border-radius: 6px 6px 0px 0px;
 }
 
 @media (max-width: 1200px) {
@@ -356,11 +359,13 @@ body.indexfb .sideground img.preview {
   display: block;
   height: 100%;
   transition: background-color 0.3s ease; /* Smooth transition for color change */
-  border-radius: 0px 6px 6px 0px;
+  border-radius: 0px 0px 6px 6px;
   padding: 0.9rem 1rem;
   box-shadow: 0px 0px 2px var(--cta-bg-color);
   font-family: var(--cta-font-family);
   font-size: 1.7rem;
+  width: 100%;
+  text-align: center;
 }
 
 .form input:disabled {
@@ -474,8 +479,8 @@ ul.custom-checklist-yes {
 }
 
 ul.custom-checklist-yes li::before {
-  content: "✓"; 
-  color: var(--primary-color); 
+  content: "✓";
+  color: var(--primary-color);
   font-weight: bold; /* Make it bold */
   display: inline-block;
   width: 1em; /* Space before text */
@@ -485,16 +490,18 @@ ul.custom-checklist-yes li::before {
 
 ul.custom-checklist-no {
   list-style-type: none; /* Remove default bullets */
-  padding: 0;
+  padding: 0 0 0 20px;
+  margin-bottom: 20px;
 }
 
 ul.custom-checklist-no li::before {
-  content: "x"; 
-  color: black; 
+  content: "📕 ";
+  color: var(--primary-color);
   font-weight: bold; /* Make it bold */
   display: inline-block;
   width: 1em; /* Space before text */
   margin-left: -1em; /* Align with list content */
+  margin-right: 5px;
 }
 
 .cross-out-price {
