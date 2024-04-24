@@ -523,3 +523,9 @@ ul.custom-checklist-no li::before {
     justify-content: center;
   }
 }
+
+.stripe-buy-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
