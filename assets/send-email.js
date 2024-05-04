@@ -79,12 +79,12 @@ document.addEventListener("DOMContentLoaded", function () {
               submitButton.style.color = "white";
               submitButton.style.opacity = "1";
               submitButton.style.border = "1px solid #4CAF50";
-              submitButton.innerHTML = "&#10003; Ready To Pre-Order";
+              submitButton.innerHTML = "&#10003; Subscribed";
 
               gtag("event", "form_submit");
 
               // Redirect to the thank-you page
-              window.location.href = "https://buy.stripe.com/5kA00yepOaCF8Mg146";
+              window.location.href = `/thank-you.html?email=${object.email}`;
             } else {
               // Handle errors
               throw new Error("Network response was not ok.");
