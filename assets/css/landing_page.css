@@ -117,9 +117,7 @@ ul.checklist li::before {
 
 @media (max-width: 900px) {
   .img-section img {
-    height: 600px;
-    -webkit-transform: scale(1);
-    transform: scale(1); /* you can change the value also */
+    height: 60vh;
     object-position: center center; /* Adjust focus as needed */
   }
 
