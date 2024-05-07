@@ -19,9 +19,15 @@ html {
   color: #ca2828;
 }
 
+.img-section {
+  position: relative; /* Contain the image and text properly */
+  overflow: hidden; /* Prevents image from overflowing outside this container */
+}
+
 .img-section img {
   height: auto;
   width: 100%;
+  object-fit: cover; /* Cover the area of the img tag */
 }
 
 .text-section {
@@ -110,6 +116,13 @@ ul.checklist li::before {
 }
 
 @media (max-width: 900px) {
+  .img-section img {
+    height: 600px;
+    -webkit-transform: scale(1);
+    transform: scale(1); /* you can change the value also */
+    object-position: center center; /* Adjust focus as needed */
+  }
+
   .text-section,
   .top-eyebrow {
     padding: 0 5%;
