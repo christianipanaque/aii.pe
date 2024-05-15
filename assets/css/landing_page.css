@@ -11,7 +11,7 @@
 
 html {
   font-size: 62.5%;
-  font-family: Lato, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif, Verdana;
   line-height: 1.5;
 }
 
@@ -54,11 +54,15 @@ html {
 }
 
 .top-eyebrow h1 {
-  font-family: Nunito Sans, sans-serif;
+  font-family: Arial, Helvetica, sans-serif, Sans, sans-serif;
   font-size: 6rem;
   line-height: 1.2;
   font-weight: 800;
   margin: 80px 0;
+}
+
+.top-eyebrow h2 {
+  font-size: 3rem;
 }
 
 .top-eyebrow p {
@@ -107,7 +111,7 @@ ul.checklist li::before {
   font-size: 3rem;
   font-weight: bold;
   color: white;
-  font-family: Lato, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif, Verdana;
   text-transform: uppercase;
 }
 
