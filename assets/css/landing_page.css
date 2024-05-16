@@ -75,6 +75,22 @@ html {
   color: #ca2828;
 }
 
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro h2 {
+  font-size: 3rem;
+  margin: 40px 0 0 0;
+}
+
+.intro a {
+  font-weight: bold;
+  color: #ca2828;
+}
+
 ul.checklist {
   list-style-type: none; /* Remove default bullets */
   padding: 0 0 0 20px;
@@ -132,5 +148,42 @@ ul.checklist li::before {
 
   .top-eyebrow h1 {
     margin: 40px 0;
+  }
+}
+
+/* Make the video container responsive */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 177.78%; /* 9:16 aspect ratio (1920 / 1080 * 100%) */
+  height: 0;
+  overflow: hidden;
+  background: #000; /* Optional: Background color to show while loading */
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Adjust video size for larger screens */
+@media (min-width: 768px) {
+  .video-container {
+    padding-bottom: 90.25%; /* 16:9 aspect ratio */
+    max-width: 100vw; /* or any width you see fit */
+    max-height: 1280px; /* maintains the 9:16 aspect ratio (500 / 9 * 16) */
+    margin: 0 auto; /* centers the video horizontally */
+  }
+}
+
+@media (min-width: 1200px) {
+  .video-container {
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    max-width: 100vw; /* or any width you see fit */
+    max-height: 1280px; /* maintains the 9:16 aspect ratio (720 / 9 * 16) */
+    margin: 0 auto; /* centers the video horizontally */
   }
 }
