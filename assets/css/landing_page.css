@@ -47,6 +47,11 @@ html {
   margin: 35px 0;
 }
 
+.text-section a {
+  font-weight: bold;
+  color: #ca2828;
+}
+
 .top-eyebrow {
   display: flex;
   flex-direction: column;
@@ -99,6 +104,21 @@ ul.checklist {
 ul.checklist li::before {
   content: "✓";
   color: #ca2828;
+  font-weight: bold; /* Make it bold */
+  display: inline-block;
+  width: 1em; /* Space before text */
+  margin-left: -1em; /* Align with list content */
+  margin-right: 5px;
+}
+
+ul.checklist-bad {
+  list-style-type: none; /* Remove default bullets */
+  padding: 0 0 0 20px;
+}
+
+ul.checklist-bad li::before {
+  content: "x";
+  color: #000000;
   font-weight: bold; /* Make it bold */
   display: inline-block;
   width: 1em; /* Space before text */
